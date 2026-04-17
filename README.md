@@ -1,3 +1,3 @@
-# Lab 2 - Starter
+# Lab 3
 
-Published Site: https://t-pizel.github.io/CSE110-Lab2/
+Published Site: https://t-pizel.github.io/sp26-cse110-lab3/
