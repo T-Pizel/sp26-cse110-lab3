@@ -23,7 +23,7 @@ body{
 }
 
 /* THE SECTION PARTS */
-section {
+section{
     background-color: var(--black, #1a1a1a);
     color: var(--beige, #fdf6e3);
     
@@ -39,47 +39,47 @@ section {
 }
 
 /* background colors for each section */
-#attendance {
+#attendance{
     background-color: #360808;
 }
 
-#agenda {
+#agenda{
     background-color: #361a08;
 }
 
-#unfinished-stuff {
+#unfinished-stuff{
     background-color: #08360c;
 }
 
-#new-business {
+#new-business{
     background-color: #080d36;
 }
 
-#comments {
+#comments{
     background-color: #310836;
 }
 
-#photos-diagrams {
+#photos-diagrams{
     background-color: #aaaaaa;
 }
 
-#media {
+#media{
     background-color: #707070;
 }
 
-#form {
+#form{
     background-color: #242424;
 }
 
 /* all the section h2 headings */
-section > h2 {
+section > h2{
     text-align: center;
     color: var(--gold);
     margin-bottom: 15px;
 }
 
 /* just the header */
-header {
+header{
     background: linear-gradient(145deg, #2a2a2a, #111111);
     padding: 25px;
     border-radius: 12px;
@@ -90,14 +90,14 @@ header {
 }
 
 /* MAIN HEADER */
-h1 {
+h1{
     color: var(--gold);
     text-align: center;
     font-size: 2rem;
 }
 
-/* Footer styles */
-footer {
+/* FOOTER styles */
+footer{
     text-align: center;
     margin: 50px auto 0 auto;
     padding: 20px;
@@ -108,28 +108,108 @@ footer {
 }
 
 /* All video and stuff */
-@media (max-width: 768px) {
+@media (max-width: 768px){
     section, header, footer {
         margin-left: 15px;
         margin-right: 15px;
     }
     
-    h1 {
+    h1{
         font-size: 1.3rem;
     }
     
-    section > h2 {
+    section > h2{
         font-size: 1.2rem;
     }
 }
 
-@media (max-width: 480px) {
-    body {
+@media (max-width: 480px){
+    body{
         padding: 10px;
     }
-    
-    section {
+    section{
         margin: 15px 10px;
         padding: 15px;
     }
+}
+
+/*LISTS -> Transparent*/
+section ul, section ol{
+    background-color: rgba(155, 150, 150, 0.08);
+    padding: 20px 20px 20px 40px;
+    border-radius: 12px;
+    margin: 15px 0;
+    list-style-position: inside;
+}
+
+/* Listing items */
+section ul li, section ol li{
+    margin: 10px 0;
+    padding: 5px 0 5px 10px;
+    border-left: 3px solid var(--gold, #d4af37);
+    border-right: 3px solid var(--gold);
+    font-size: 1rem;
+}
+
+section ul ul, section ol ul{
+    margin-left: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Attendance list */
+#attendance ul li{
+    list-style-type: none;
+    position: relative;
+}
+#attendance ul li::before{
+    content: "🎵 ";
+    color: var(--gold);
+}
+
+/* Agenda list */
+#agenda ol{
+    list-style-type: none;
+    counter-reset: agenda-counter;
+}
+#agenda ol li{
+    counter-increment: agenda-counter;
+    position: relative;
+    padding-left: 35px;
+}
+#agenda ol li::before{
+    content: counter(agenda-counter) ".";
+    color: var(--gold);
+    font-weight: bold;
+    position: absolute;
+    left: 5px;
+}
+
+/* Unfinished business */
+#unfinished-stuff ul li{
+    list-style-type: none;
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Comments */
+#comments ul li{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 12px;
+    margin: 12px 0;
+    border-left: none;
+}
+#comments ul li strong{
+    color: var(--gold);
+}
+
+/* Summary */
+details ul{
+    margin: 10px 0 0 20px;
+    padding: 10px;
+}
+details ul li{
+    border-left: 2px solid var(--gold);
+    margin: 5px 0;
+    padding: 3px 0 3px 10px;
 }
