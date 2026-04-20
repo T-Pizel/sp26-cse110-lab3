@@ -16,7 +16,7 @@
 
 body{
     font-family: 'Courier New', 'Georgia', monospace;
-    margin: 0;
+    margin: 0em 0%;
     padding: 20px;
     background: linear-gradient(135deg, #5b5f6b 40%, #5e1f1f 80%);
     min-height:100vh
@@ -40,11 +40,11 @@ section{
 
 /* background colors for each section */
 #attendance{
-    background-color: #360808;
+    background-color: color-mix(in srgb, var(--black) 70%, var(--red) 30%);
 }
 
 #agenda{
-    background-color: #361a08;
+    background-color: color(display-p3 0 0 0);
 }
 
 #unfinished-stuff{
@@ -64,16 +64,17 @@ section{
 }
 
 #media{
-    background-color: #707070;
+    background-color: hsl(0, 0%, 31%);
 }
 
 #form{
-    background-color: #242424;
+    background-color: black;
 }
 
 /* all the section h2 headings */
 section > h2{
     text-align: center;
+    text-decoration: underline solid var(--gold);
     color: var(--gold);
     margin-bottom: 15px;
 }
@@ -81,7 +82,7 @@ section > h2{
 /* just the header */
 header{
     background: linear-gradient(145deg, #2a2a2a, #111111);
-    padding: 25px;
+    padding: 1rem 5vw;
     border-radius: 12px;
     margin: 0 auto 40px auto;
     color: var(--beige);
@@ -115,7 +116,7 @@ footer{
     }
     
     h1{
-        font-size: 1.3rem;
+        font-size: 12pt;
     }
     
     section > h2{
@@ -146,7 +147,7 @@ section ul, section ol{
 section ul li, section ol li{
     margin: 10px 0;
     padding: 5px 0 5px 10px;
-    border-left: 3px solid var(--gold, #d4af37);
+    border-left: 3px solid rgb(213,175,55);
     border-right: 3px solid var(--gold);
     font-size: 1rem;
 }
@@ -212,4 +213,37 @@ details ul li{
     border-left: 2px solid var(--gold);
     margin: 5px 0;
     padding: 3px 0 3px 10px;
+}
+
+/* PHOTO */
+#photos-diagrams{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+#photos-diagrams h2{
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#photos-diagrams .image-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 5mm;
+    justify-items: center;
+    align-items: center;
+}
+#photos-diagrams img{
+    width: 50vh;
+    max-width: 120px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+}
+
+/* VIDEO */
+.media-video{
+    border-style: dotted dotted dotted dotted;
+    border-color: var(--beige) var(--beige) var(--beige) var(--beige);
+    border-width: 0.01in 1px 1px 1px;
 }
