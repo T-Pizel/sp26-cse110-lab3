@@ -104,6 +104,24 @@ h1{
     font-size: 2rem;
 }
 
+h1, h2, h3, legend{
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* For any ul that come after an h2*/
+h2 ~ ul{ 
+    margin-top: 10px;
+    border-left: 3px solid var(--beige);
+    padding-left: 20px;
+}
+
+/* only ul that comes immediately after an h2*/
+h2 + ul{
+    border-top: 1px solid var(--beige);
+    padding-top: 10px;
+}
+
 /* FOOTER styles */
 footer{
     text-align: center;
@@ -309,4 +327,144 @@ details:nth-child(2):hover summary {
     border-style: dotted dotted dotted dotted;
     border-color: var(--beige) var(--beige) var(--beige) var(--beige);
     border-width: 0.01in 1px 1px 1px;
+}
+
+/* FORM */
+input[type="text"], input[type="date"], input[type="radio"], 
+input[type="checkbox"], select, textarea{
+    background-color: #333;
+    color: var(--beige);
+
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+
+    padding: 10px;
+    margin: 8px 0;
+    font-family: 'Playfair Display', monospace;
+}
+
+input[type="radio"] + label, input[type="checkbox"] + label{
+    color: var(--beige);
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+section#form{
+    background: linear-gradient(135deg, #1a1a1a, #0d0d2a);
+    border: 2px solid var(--gold);
+}
+
+fieldset:has(legend){
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+fieldset {
+    padding: 20px;
+    gap: 15px 0;
+}
+
+fieldset div:has(input[type="checkbox"]){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+form{
+    & fieldset{
+        & legend{
+            color: var(--gold);
+            font-size: 1.3rem;
+            padding: 0 15px;
+            width: auto;
+        }
+        
+        & label{
+            display: inline-block;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+        
+        & button{
+            background-color: var(--red);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.2s ease;
+        }
+        
+        & button:hover{
+            background-color: var(--gold);
+            color: var(--black);
+        }
+    }
+}
+
+/* Button on form */
+button:active{
+    transform: scale(0.97);
+    background-color: var(--gold);
+    color: var(--black);
+}
+input:active, select:active, textarea:active{
+    border-color: var(--red);
+    outline: none;
+}
+
+section#form:has(button){
+    border-bottom: 3px solid var(--beige);
+}
+
+datalist{
+    background-color: #333;
+    color: var(--beige);
+}
+
+select option{
+    background-color: #333;
+    color: var(--beige);
+}
+
+input:focus, select:focus, textarea:focus{
+    outline: none;
+    border-color: var(--red);
+    box-shadow: 0 0 5px var(--gold);
+}
+
+button:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* NAVIGATION STUFF */
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+nav ul li a{
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover{
+    color: var(--red);
 }
